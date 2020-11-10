@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground, Text, View, Button } from 'react-native';
+import { Image, Text, View, Button } from 'react-native';
 import {css} from '../css/css';
 
 export default function Sobre() 

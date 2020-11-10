@@ -2,35 +2,6 @@ import {StyleSheet} from "react-native";
 
 const css = StyleSheet.create({
 
-    container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  
-    nome: {
-      marginTop: 150,
-      color: 'black',
-      fontSize: 45,
-      marginRight: 65,
-      fontWeight: "bold",
-    },
-  
-    sobnome: {
-      color: 'black',
-      fontSize: 45,
-      marginLeft: 60,
-      fontWeight: "bold",
-      marginBottom: 50,
-    },
-    
-    image: {
-      flex: 1,
-      resizeMode: "cover",
-      justifyContent: "center"
-    },
-
-
     // css pag sobre \|/
     containerSobre:{
         flex:1,
