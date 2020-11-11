@@ -9,6 +9,7 @@ import Sobre from './src/wclick/sobre';
 import Home from './src/wclick/apptoken/Home';
 import CriarAnuncio from './src/wclick/apptoken/CriarAnuncio';
 import Anuncio from './src/wclick/apptoken/Anuncio';
+import Chat from './src/wclick/apptoken/Chat'
 
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
                 <Stack.Screen name="Home" component={Home} options={{headerShown:false}}/>
                 <Stack.Screen name="CriarAnuncio" component={CriarAnuncio} options={{headerShown:false}}/>
                 <Stack.Screen name="Anuncio" component={Anuncio} options={{headerShown:false}}/>
+                <Stack.Screen name="Chat" component={Chat} options={{headerShown:false}}/>
               </Stack.Navigator>
           </NavigationContainer>
   );

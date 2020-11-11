@@ -11,7 +11,7 @@ const cssH = StyleSheet.create({
     
     view1:{
         flexDirection: 'row',
-        marginTop:'5%',
+        marginTop:'8%',
         alignItems:'center'
     },
     Userlogo:{
@@ -108,6 +108,7 @@ const cssH = StyleSheet.create({
         borderWidth:4,
         marginTop:'20%'
     },
+
 
     poste:{
         backgroundColor:'#035250',

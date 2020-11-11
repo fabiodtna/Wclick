@@ -1,6 +1,13 @@
 import React from 'react'
-import { View, Text, Image, TextInput, ScrollView, TouchableOpacity } from 'react-native'
+import { 
+    View, 
+    Text, 
+    Image, 
+    ScrollView, 
+    TouchableOpacity} from 'react-native'
+
 import { cssA } from '../../css/cssA';
+import MapView from 'react-native-maps';
 
 export default function CriarAnuncio({navigation}){
     return (
@@ -32,13 +39,31 @@ export default function CriarAnuncio({navigation}){
                         <Image style={cssA.imageC} source={require('../../img/logo/image.png')}/>
                     </View>
                 </View>
-                <TouchableOpacity style={cssA.butaoM}>
+                <TouchableOpacity style={cssA.butaoM}
+                onPress={() => navigation.navigate('Chat')}>
                     <Text>Proposta</Text>
                 </TouchableOpacity>
             </View>
                 
                 <View style={cssA.container2}>
-                    <Text> localização</Text>
+                <MapView
+                        initialRegion={{
+                            latitude:-24.1689806 ,
+                            longitude: -46.7851557,
+                            latitudeDelta:0.0042,
+                            longitudeDelta:0.0031,
+                        }}
+                       
+                        style={cssA.maps}
+                    >
+                        <MapView.Marker
+                        coordinate={{
+                            latitude:-24.1689810 ,
+                            longitude: -46.7851557,
+                        }}
+                        />
+                    </MapView>
+
                 </View>
 
                 <View style={cssA.containerbuton}>

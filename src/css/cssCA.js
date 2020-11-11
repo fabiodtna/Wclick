@@ -11,7 +11,7 @@ const cssCA = StyleSheet.create({
         width: 30,
         height: 30,
         marginLeft: '2%',
-        marginTop: '5%',
+        marginTop: '8%',
     },
 
     container1: {
@@ -68,18 +68,24 @@ const cssCA = StyleSheet.create({
         marginBottom: '4%',
         padding: 2,
     },
+    maps:{
+        position:'absolute',
+        top:0,
+        left:0,
+        bottom:0,
+        right:0,
+    },
 
     container2: {
         flex: 1,
         justifyContent:'center',
         alignItems:'center',
-        backgroundColor: '#034443',
         borderWidth: 3,
         borderColor: 'black',
         width: '80%',
         height: 250,
         marginLeft: '10%',
-        borderRadius: 27,
+        borderRadius: 0,
     },
 
     containerbuton: {

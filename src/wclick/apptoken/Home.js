@@ -57,7 +57,7 @@ export default function Home({navigation}) {
                     </View> 
 
 
-                <ScrollView>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <View style={cssH.poste}>
                         <TouchableOpacity onPress={() => navigation.navigate('Anuncio')}>
                             <Text>
