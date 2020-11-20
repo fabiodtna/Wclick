@@ -1,13 +1,12 @@
-import React from 'react'
-import { View, Text, Image, TextInput, ScrollView, TouchableOpacity } from 'react-native'
-import { State } from 'react-native-gesture-handler';
+import React, { useEffect, useState } from 'react';
+import { View, Text, Image, TextInput, ScrollView, TouchableOpacity,Button, PermissionsAndroid } from 'react-native'
 import MapView from 'react-native-maps';
 import { cssCA } from '../../css/cssCA';
 
+import Geolocation from 'react-native-geolocation-service';
+
   
 export default function CriarAnuncio({navigation}){
-    
-    
     
     return (
         
@@ -48,22 +47,7 @@ export default function CriarAnuncio({navigation}){
                 </TouchableOpacity>
                 
                 <View style={cssCA.container2}>
-                    <MapView
-                        initialRegion={{
-                            latitude:-24.1689806 ,
-                            longitude: -46.7851557,
-                            latitudeDelta:0.0042,
-                            longitudeDelta:0.0031,
-                        }}
-                        style={cssCA.maps}
-                    >
-                        <MapView.Marker
-                        coordinate={{
-                            latitude:-24.1689810 ,
-                            longitude: -46.7851557,
-                        }}
-                        />
-                    </MapView>
+                    <Image style={cssCA.maps} source={require('../../img/maps.jpg')}/>
                 </View>
 
                 <View style={cssCA.containerbuton}>

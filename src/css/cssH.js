@@ -85,8 +85,8 @@ const cssH = StyleSheet.create({
         backgroundColor:'#035250',
         alignItems:'center',
         justifyContent:'center',
-        width:'25%',
-        height: '50%',
+        width:'27%',
+        height: '60%',
         borderRadius:10,
         marginTop:'2%',
         marginLeft:'2%',
@@ -95,7 +95,7 @@ const cssH = StyleSheet.create({
     },
     Tcategoria:{
         flex:1,
-        fontSize:15,
+        fontSize:17,
         fontWeight:'bold',
         marginTop:'1%'
 
@@ -114,7 +114,7 @@ const cssH = StyleSheet.create({
         backgroundColor:'#035250',
         alignItems:'center',
         justifyContent:'center',
-        width:'85%',
+        width:'90%',
         height:'15%',
         borderRadius:10,
         marginTop:'3%',

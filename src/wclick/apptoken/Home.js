@@ -47,7 +47,7 @@ export default function Home({navigation}) {
                         <Text style={cssH.Tcategoria}>Notebook</Text>
                         <Text style={cssH.Tcategoria}>Geladeira</Text>
                         <Text style={cssH.Tcategoria}>Console</Text>
-                        <Text style={cssH.Tcategoria}>Microndas</Text>
+                        <Text style={cssH.Tcategoria}>Microondas</Text>
                         <Text style={cssH.Tcategoria}>M.d.lavar</Text>
                         <Text style={cssH.Tcategoria}>A.Som</Text>
                         <Text style={cssH.Tcategoria}>TV</Text>   

@@ -13,7 +13,11 @@
     },
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android":{
+    "package": "com.Wcliktest.dev"
+    }
   }
 }
+
 

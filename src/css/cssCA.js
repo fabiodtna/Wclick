@@ -69,23 +69,22 @@ const cssCA = StyleSheet.create({
         padding: 2,
     },
     maps:{
-        position:'absolute',
-        top:0,
-        left:0,
-        bottom:0,
-        right:0,
+        width:'100%', 
+        height:'100%',
     },
+
 
     container2: {
         flex: 1,
         justifyContent:'center',
         alignItems:'center',
-        borderWidth: 3,
+        borderWidth: 5,
         borderColor: 'black',
         width: '80%',
         height: 250,
         marginLeft: '10%',
-        borderRadius: 0,
+        borderRadius:10,
+        backgroundColor:'black'
     },
 
     containerbuton: {

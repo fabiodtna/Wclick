@@ -46,23 +46,7 @@ export default function CriarAnuncio({navigation}){
             </View>
                 
                 <View style={cssA.container2}>
-                <MapView
-                        initialRegion={{
-                            latitude:-24.1689806 ,
-                            longitude: -46.7851557,
-                            latitudeDelta:0.0042,
-                            longitudeDelta:0.0031,
-                        }}
-                       
-                        style={cssA.maps}
-                    >
-                        <MapView.Marker
-                        coordinate={{
-                            latitude:-24.1689810 ,
-                            longitude: -46.7851557,
-                        }}
-                        />
-                    </MapView>
+                <Image style={cssA.maps} source={require('../../img/maps.jpg')}/>
 
                 </View>
 
