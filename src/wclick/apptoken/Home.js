@@ -6,14 +6,13 @@
         TouchableOpacity, 
         Image,
         ScrollView} from 'react-native'
-import { cssA } from '../../css/cssA';
-    import { cssH } from '../../css/cssH';
+        import { cssH } from '../../css/cssH';
 
 export default function Home({navigation}) {
     return (
         <KeyboardAvoidingView style={cssH.container}>
             <View style={cssH.view1}>
-                <Image style={cssH.Userlogo} source={require('../../img/logo/User.jpg')}/> 
+                <Image style={cssH.Userlogo} source={require('../../img/avatar/defalt.png')}/> 
                 <Text style={cssH.textname}>NomeUser</Text>
                 <Text style={cssH.editar}>Editar</Text> 
                 <Text style={cssH.sair}>Sair</Text>

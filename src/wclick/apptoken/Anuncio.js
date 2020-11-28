@@ -20,7 +20,7 @@ export default function CriarAnuncio({navigation}){
             <View style={cssA.container1}>
                 <View style={{flexDirection:'row', marginTop:'5%'}}>
                     <Image style={cssA.fotoUser}
-                    source={require('../../img/logo/User.jpg')}/> 
+                    source={require('../../img/avatar/defalt.png')}/> 
                     <Text style={cssA.User}> User </Text>
                 </View>
             

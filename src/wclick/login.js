@@ -50,9 +50,8 @@ export default function Login({navigation}) {
               flexDirection:"row",
               marginTop:15
               }}>
-                      <Text style={css2.Criar}onPress={() => {
-                            alert('Redirecionar Criar Conta');
-                          }}>
+                      <Text style={css2.Criar}
+                          onPress={() => navigation.navigate('Cadastro') }>
                             Criar Conta
                       </Text>
 

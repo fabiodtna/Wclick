@@ -11,7 +11,7 @@ const css = StyleSheet.create({
     },
     caixatextsobre:{
         height:"80%",
-        width:'98%',
+        width:'95%',
         backgroundColor:'#999999',
         alignItems:'center',
         justifyContent:'center',
@@ -20,6 +20,8 @@ const css = StyleSheet.create({
         borderWidth:3,
     },
     textsobre:{
+        textAlign:'center',
+        fontWeight: 'bold',
         fontSize:14,
         marginLeft:7,
         marginRight:7
