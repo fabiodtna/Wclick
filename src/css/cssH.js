@@ -108,19 +108,48 @@ const cssH = StyleSheet.create({
         borderWidth:4,
         marginTop:'20%'
     },
-
-
+    anuncios:{
+        marginBottom:150,
+        flex:1
+    },
     poste:{
+        flex: 1,
+        flexGrow: 1,
         backgroundColor:'#035250',
         alignItems:'center',
-        justifyContent:'center',
         width:'90%',
-        height:'15%',
+        height:150,
         borderRadius:10,
         marginTop:'3%',
         marginLeft:'2%',
         borderWidth:1,
         borderColor:'#fff',
+    },
+    Postcon:{
+        marginLeft:'5%'
+    },
+    VPavatarnome:{
+        flexDirection:'row',
+        marginTop:'5%'
+    },
+    Auserlogo:{
+        width: 30,
+        height: 30,
+        borderRadius:20,
+        marginRight:'3%'
+    },
+    Ausernome:{
+        marginTop:'3%',
+        marginRight:'45%'
+    },
+    Postext:{
+        marginTop:'3%'
+    },
+    Uposte:{
+        marginTop:25,
+        marginBottom:40,
+        alignItems:'center'
+        
     }
 });
 

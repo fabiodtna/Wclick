@@ -34,9 +34,6 @@ module.exports = {
       id_cl_tc: {
         type: Sequelize.INTEGER
       },
-      nr_cpf: {
-        type: Sequelize.INTEGER
-      },
       nm_descricao: {
         type: Sequelize.STRING
       },

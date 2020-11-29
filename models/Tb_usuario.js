@@ -10,7 +10,6 @@ class Tb_usuarios extends Model{
           nm_email: DataTypes.STRING,
           nm_senha: DataTypes.STRING,
           id_cl_tc: DataTypes.INTEGER,
-          nr_cpf: DataTypes.INTEGER,
           nm_descricao: DataTypes.STRING,
           nr_telefone: DataTypes.STRING
         }, {

@@ -63,7 +63,7 @@ export default function Cadastro() {
             <ScrollView>
                 <View style={cssCD.input}>
                     <View style={cssCD.Vnome}>
-                        <Text style={cssCD.text}>Nome:{clit} </Text>
+                        <Text style={cssCD.text}>Nome: </Text>
                         <View style={{flexDirection:"row", flex:1}}>
                             <View style={{flex:1}}> 
                                 <TextInput style={cssCD.Inome}
@@ -101,10 +101,10 @@ export default function Cadastro() {
                             style={{ height: 40, width: 150}}
                             onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue) && setCidade(itemValue)}
                             >
-                            <Picker.Item label="Select city" />
-                            <Picker.Item label="Itanhaém" value="1" />
-                            <Picker.Item label="São Paulo" value="2" />
-                            <Picker.Item label="Mongaguá" value="3"/>
+                            <Picker.Item label="Select city" value="1"/>
+                            <Picker.Item label="Itanhaém" value="2" />
+                            <Picker.Item label="São Paulo" value="3" />
+                            <Picker.Item label="Mongaguá" value="4"/>
                         </Picker>
                         <Text>{selectedValue}</Text>
                     </View>

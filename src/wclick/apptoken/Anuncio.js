@@ -27,10 +27,8 @@ export default function CriarAnuncio({navigation}){
                 <View style={cssA.Mensag}>
                     <ScrollView>
                         <Text
-                        style={cssA.textoD}
-                        underlineColorAndroid="transparent"
-                        multiline={true}
-                        maxLength={400}>Touch do motorola motoE4 não funciona</Text>
+                        style={cssA.textoD}>
+                            Touch do motorola motoE4 não funciona</Text>
                     </ScrollView>
                     
                     <View style={{flexDirection:'row',}}>

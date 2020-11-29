@@ -56,24 +56,69 @@ export default function Home({navigation}) {
                     </View> 
 
 
-                <ScrollView showsVerticalScrollIndicator={false}>
+                <ScrollView showsVerticalScrollIndicator={false}
+                style={cssH.anuncios}>
                     <View style={cssH.poste}>
                         <TouchableOpacity onPress={() => navigation.navigate('Anuncio')}>
-                            <Text>
-                                sad
-                            </Text>
-                            <Text>
-                                sad
-                            </Text>
-                            <Text>
-                                sad
-                            </Text>
-                            <Text>
-                                sad
-                            </Text>
-                            <Text>
-                                sad
-                            </Text>
+                          <View style={cssH.Postcon}>
+                                <View style={cssH.VPavatarnome}>
+                                <Image style={cssH.Auserlogo} source={require('../../img/avatar/2.png')}/> 
+                                <Text style={cssH.Ausernome}>Carla</Text>
+                                </View>
+                                <Text style={cssH.Postext}>
+
+                                Touch do motorola motoE4 não funciona
+                                
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={cssH.poste}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Anuncio')}>
+                          <View style={cssH.Postcon}>
+                                <View style={cssH.VPavatarnome}>
+                                <Image style={cssH.Auserlogo} source={require('../../img/avatar/1.png')}/> 
+                                <Text style={cssH.Ausernome}>Joana</Text>
+                                </View>
+                                <Text style={cssH.Postext}>
+
+                                Arcondicionado parou de funcionar
+                                marca 'seila'
+
+                                
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={cssH.poste}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Anuncio')}>
+                          <View style={cssH.Postcon}>
+                                <View style={cssH.VPavatarnome}>
+                                <Image style={cssH.Auserlogo} source={require('../../img/avatar/4.png')}/> 
+                                <Text style={cssH.Ausernome}>João</Text>
+                                </View>
+                                <Text style={cssH.Postext}>
+
+                                Meu Notebook Positivo está com problemas no teclado!
+
+                                
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={cssH.poste}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Anuncio')}>
+                          <View style={cssH.Postcon}>
+                                <View style={cssH.VPavatarnome}>
+                                <Image style={cssH.Auserlogo} source={require('../../img/avatar/5.png')}/> 
+                                <Text style={cssH.Ausernome}>Carlos</Text>
+                                </View>
+                                <Text style={cssH.Postext}>
+
+                                Preciso de uma tecnico minha TV esta com defeito
+                                
+                                </Text>
+                            </View>
                         </TouchableOpacity>
                     </View>
                     <View style={cssH.poste}>
@@ -110,93 +155,11 @@ export default function Home({navigation}) {
                             sad
                         </Text>
                     </View>
-                    <View style={cssH.poste}>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
+                    <View style={cssH.Uposte}>
+                  <Text>The End!</Text>
                     </View>
-                    <View style={cssH.poste}>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                    </View>
-                    <View style={cssH.poste}>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                    </View>
-                    <View style={cssH.poste}>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                    </View>
-                    <View style={cssH.poste}>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                    </View>
-                </ScrollView>
 
+                </ScrollView>
             </View>
 
         </KeyboardAvoidingView>
