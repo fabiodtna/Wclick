@@ -3,7 +3,7 @@ module.exports={
   host:"127.0.0.1",
   username:"root",
   password:null,
-  database:"Wclick",
+  database:"bdwclick",
   define:{
     timestamps:true,
     underscored:true,

@@ -9,8 +9,6 @@ import Geolocation from 'react-native-geolocation-service';
 export default function CriarAnuncio({navigation}){
     
     return (
-        
-        
         <View style={cssCA.containerPrincipal}>
             <ScrollView>
             <TouchableOpacity  onPress={() => navigation.navigate('Home')}>

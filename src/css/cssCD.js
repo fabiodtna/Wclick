@@ -19,24 +19,35 @@ const cssCD = StyleSheet.create({
     },
     Vnome:{
         flex:1,
-        width:'60%'
-
+        width:'100%',
     },
     Inome:{
         marginTop:'1%',
         borderColor:"black",
         borderWidth: 1,
         borderRadius:7,
-        width:'80%',
+        width:'70%',
         padding:2,
         backgroundColor:'white',
         fontWeight:'bold',
         color:"black"
     },
+    Userlogo:{
+        marginRight:'2%',
+        width: 60,
+        height: 60,
+        borderRadius:25,
+    },
+    seta:{
+        marginTop:'3%',
+        marginRight:'10%',
+        width: 35,
+        height: 35,
+    },
     VSnome:{
         flex:1,
         width:"80%",
-        marginTop:'8%'
+        marginTop:'5%'
 
     },
     Isobrenome:{
@@ -71,8 +82,9 @@ const cssCD = StyleSheet.create({
         marginLeft:'10%'
     },
     Icidades:{
-        marginTop:"3%"
-    },
+        marginTop:"3%",
+        width:'30%',
+   },
     Vdata:{
         marginTop:"3%",
         marginLeft:'5%'
@@ -130,6 +142,20 @@ const cssCD = StyleSheet.create({
           borderColor:"white",
           borderWidth: 1,
           borderRadius:7,
+      },
+      Vdescricao:{
+        flex:1,
+        marginLeft:'10%',
+        marginTop:'3%',
+      },
+      Vdescricao:{
+        marginLeft:'13%',
+        marginRight:'13%',
+        backgroundColor:'white',
+        padding:20,
+        borderColor:"black",
+        borderWidth: 1,
+        borderRadius:7,
       }
 
 });
