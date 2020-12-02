@@ -17,28 +17,34 @@ module.exports = {
         onDelete: 'CASCADE',
       },
       nm_nome: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       nm_sobrenome: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       dt_nascimento: {
         type: Sequelize.STRING
       },
       nm_email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       nm_senha: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       id_cl_tc: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
       nm_descricao: {
         type: Sequelize.STRING
       },
       nr_telefone: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       created_at:{
         type: Sequelize.DATE,

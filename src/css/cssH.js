@@ -10,12 +10,14 @@ const cssH = StyleSheet.create({
     },
     
     view1:{
+        flex:1,
+        padding:25,
         flexDirection: 'row',
         marginTop:'8%',
         alignItems:'center'
     },
     Userlogo:{
-        marginLeft:'2%',
+        marginLeft:'5%',
         marginRight:'2%',
         width: 50,
         height: 50,
@@ -23,7 +25,7 @@ const cssH = StyleSheet.create({
     },
     textname:{
         fontSize:20,
-        marginRight:'25%'
+        marginRight:'30%'
     },
     editar:{   
         fontSize:15,

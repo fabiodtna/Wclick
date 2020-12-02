@@ -1,4 +1,5 @@
-import React  from 'react';
+import React, { useState, useEffect, Component } from 'react';
+import { AsyncStorage } from 'react-native';
 import { 
   Text, 
   View, 
@@ -6,11 +7,58 @@ import {
   Image, 
   TextInput,
   TouchableOpacity,
+  Alert
+
   } from 'react-native';  
   import { color } from 'react-native-reanimated'; // animação dps
   import { css2 } from '../css/css2';
 
 export default function Login({navigation}) {
+
+  const[user, setUser] =  useState(null);
+  const[password, setPassword] =  useState(null);
+  const[login,setLogin] = useState();
+  
+  const usersenha = () =>
+  Alert.alert(
+    "Error",
+    "Usuário ou senha inválidos",
+    [
+      {
+        text: "Cancel",
+        onPress: () => console.log("Cancel Pressed"),
+        style: "cancel"
+      },
+      { text: "OK", onPress: () => console.log("OK Pressed") }
+    ],
+    { cancelable: false }
+  );
+
+
+  async function sendForm(){
+
+    let response=await fetch('http:/10.0.0.108:3333/login',{
+
+      method: 'POST',
+      headers:{
+        accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        nm_email: user,
+        nm_senha: password
+      })
+    });
+
+    let json =await response.json();
+    if(json === 'error'){
+      usersenha();
+      await AsyncStorage.clear();
+    }else{
+     let userData =await AsyncStorage.setItem('userData', JSON.stringify(json));
+     navigation.navigate('Home');
+    }
+  }
 
   return (
   <View style={css2.backgroud}>
@@ -30,7 +78,7 @@ export default function Login({navigation}) {
             placeholder="Email:"
             autoCorrect={false}
             placeholderTextColor="black"
-            onChangeText={()=> {}}
+            onChangeText={text=>setUser(text)}
             />
 
             <TextInput
@@ -39,10 +87,10 @@ export default function Login({navigation}) {
             autoCorrect={false}
             placeholderTextColor="black"
             secureTextEntry={true}
-            onChangeText={()=> {}}
+            onChangeText={text=>setPassword(text)}
             />
 
-            <TouchableOpacity style={css2.submit} onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity style={css2.submit} onPress={() => sendForm()}>
                 <Text style={css2.subtext}>Entrar</Text>
             </TouchableOpacity>
 

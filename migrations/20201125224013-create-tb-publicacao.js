@@ -15,15 +15,19 @@ module.exports = {
         },
         onUpdate:'CASCADE',
         onDelete: 'CASCADE',
+        allowNull: false,
       },
       nm_publicação: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       nm_descricao: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
-      dt_pub: {
-        type: Sequelize.DATE
+      nm_endereco:{
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       created_at:{
         type: Sequelize.DATE,

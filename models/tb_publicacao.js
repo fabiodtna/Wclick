@@ -6,6 +6,7 @@ class Tb_publicacaos extends Model{
           id_usuario: DataTypes.INTEGER,
           nm_publicação: DataTypes.STRING,
           nm_descricao: DataTypes.STRING,
+          nm_endereco: DataTypes.STRING,
           dt_pub: DataTypes.DATE
         }, {
           sequelize

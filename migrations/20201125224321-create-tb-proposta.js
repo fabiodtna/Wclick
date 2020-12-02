@@ -25,7 +25,8 @@ module.exports = {
         onDelete: 'CASCADE',
       },
       vl_proposta: {
-        type: Sequelize.REAL
+        type: Sequelize.REAL,
+        allowNull: false,
       },
       nm_mensage: {
         type: Sequelize.STRING

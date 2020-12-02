@@ -9,11 +9,12 @@ import {
     Button, 
     TextInput,
     TouchableOpacity,
-    Picker
+    Picker,
+    Alert
     } from 'react-native'; 
     import { cssCD } from '../css/cssCD';  
 
-export default function Cadastro() {
+    export default function Cadastro({navigation}) {
 
     //select cidades!
     const [selectedValue, setSelectedValue] = useState("1");
@@ -33,8 +34,9 @@ export default function Cadastro() {
      const [tecnico, setTecnico] = React.useState();
      const [cliente, setCliente] = React.useState();
      const [clit, setClit] = React.useState();
-    //Enviar o Form
     
+    
+     //Enviar o Form
     async function sendForm(){
         let response= await fetch('http:/10.0.0.108:3333/Tb_usuario',{
             method:'POST',
@@ -55,7 +57,50 @@ export default function Cadastro() {
                 nr_telefone: celular
          })
         });
-     }
+    }
+    const usersenhaD = () =>
+    Alert.alert(
+        "Error",
+        "As senhas não coincidem. Tente novamente.",
+        [
+          {
+            text: "Cancel",
+            onPress: () => navigation.navigate('Login'),
+            style: "cancel"
+          },
+          { text: "OK", onPress: () =>{} }
+        ],
+        { cancelable: false }
+      );
+
+      const sucesso = () =>
+      Alert.alert(
+        "Parabéns",
+        "Cadastro feito com sucesso",
+        [
+          {
+            text: "Cancel",
+            onPress: () => navigation.navigate('Cadastro'),
+            style: "cancel"
+          },
+          { text: "Fazer login!", onPress: () => navigation.navigate('Login')}
+        ],
+        { cancelable: false }
+      );
+    
+    async function verif(){
+        if(email == null || senha == null || clit == null || nome == null){
+            alert('Preencha os campos');
+        }
+        else if (senha != confsenha ) {
+            usersenhaD();
+            
+        }else{
+            sendForm();
+            sucesso();
+        }
+    }
+
      const [shouldShow, setShouldShow] = useState(false);
     
     return (
@@ -68,7 +113,7 @@ export default function Cadastro() {
                             <View style={{flex:1}}> 
                                 <TextInput style={cssCD.Inome}
                                 onChangeText={text=>setNome(text)}
-                                maxLength={20}
+                                maxLength={10}
                                 />
                             </View>
                             <Image style={cssCD.Userlogo} source={require('../img/avatar/defalt.png')}/>
@@ -190,8 +235,7 @@ export default function Cadastro() {
                  ) : null}
                 <View style={cssCD.Vsubmit}>
                 <TouchableOpacity style={cssCD.submit}
-                onPress={()=>sendForm()}
-                >
+                onPress={()=>verif()}>
                     <Text style={cssCD.text}>Cadastrar</Text>
                 </TouchableOpacity>
                 </View>

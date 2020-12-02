@@ -1,4 +1,5 @@
-    import React from 'react'
+    import React, {useState, useEffect} from 'react';
+    import { AsyncStorage } from 'react-native';
     import { View, 
         Text,
         KeyboardAvoidingView, 
@@ -9,11 +10,23 @@
         import { cssH } from '../../css/cssH';
 
 export default function Home({navigation}) {
+
+    const [user, setUser]= useState();
+
+    useEffect(()=>{
+        async function getUser(){
+            let response=await AsyncStorage.getItem('userData');
+            let json=JSON.parse(response);
+            setUser(json.nm_nome);
+        }
+        getUser();
+    },[]);
+
     return (
         <KeyboardAvoidingView style={cssH.container}>
             <View style={cssH.view1}>
                 <Image style={cssH.Userlogo} source={require('../../img/avatar/defalt.png')}/> 
-                <Text style={cssH.textname}>NomeUser</Text>
+                <Text style={cssH.textname}>{user}</Text>
                 <Text style={cssH.editar}>Editar</Text> 
                 <Text style={cssH.sair}>Sair</Text>
             </View>
