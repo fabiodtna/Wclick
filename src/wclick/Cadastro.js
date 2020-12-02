@@ -50,7 +50,7 @@ import {
                 nm_sobrenome: sobrenome,
                 dt_nascimento: dateN,
                 nm_email: email,
-                nm_senha: senha,
+                senha: senha,
                 id_cl_tc: clit,
                 
                 nm_descricao: descricao, 
@@ -144,12 +144,12 @@ import {
                         <Picker
                             selectedValue={selectedValue}
                             style={{ height: 40, width: 150}}
-                            onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue) && setCidade(itemValue)}
+                            onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue) || setCidade(itemValue)}
                             >
-                            <Picker.Item label="Select city" value="1"/>
-                            <Picker.Item label="Itanhaém" value="2" />
-                            <Picker.Item label="São Paulo" value="3" />
-                            <Picker.Item label="Mongaguá" value="4"/>
+                            <Picker.Item label="Select city" value="0"/>
+                            <Picker.Item label="Itanhaém" value="1" />
+                            <Picker.Item label="São Paulo" value="2" />
+                            <Picker.Item label="Mongaguá" value="3"/>
                         </Picker>
                         <Text>{selectedValue}</Text>
                     </View>

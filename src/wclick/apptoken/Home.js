@@ -9,14 +9,18 @@
         ScrollView} from 'react-native'
         import { cssH } from '../../css/cssH';
 
-export default function Home({navigation}) {
+    export default function Home({navigation}) {
 
     const [user, setUser]= useState();
+    const [iduser, setIduser]= useState();
 
     useEffect(()=>{
         async function getUser(){
-            let response=await AsyncStorage.getItem('userData');
-            let json=JSON.parse(response);
+            let name=await AsyncStorage.getItem('userData');
+            let iduser=await AsyncStorage.getItem('userData');
+            let json=JSON.parse(name);
+            let id=JSON.parse(iduser);
+            setIduser(id.id);
             setUser(json.nm_nome);
         }
         getUser();
@@ -26,7 +30,7 @@ export default function Home({navigation}) {
         <KeyboardAvoidingView style={cssH.container}>
             <View style={cssH.view1}>
                 <Image style={cssH.Userlogo} source={require('../../img/avatar/defalt.png')}/> 
-                <Text style={cssH.textname}>{user}</Text>
+                <Text style={cssH.textname}>{user}-{iduser}</Text>
                 <Text style={cssH.editar}>Editar</Text> 
                 <Text style={cssH.sair}>Sair</Text>
             </View>

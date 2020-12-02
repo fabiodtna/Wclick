@@ -29,11 +29,10 @@ export default function Login({navigation}) {
         onPress: () => console.log("Cancel Pressed"),
         style: "cancel"
       },
-      { text: "OK", onPress: () => console.log("OK Pressed") }
+      { text: "OK", onPress: () => {} }
     ],
     { cancelable: false }
-  );
-
+  );    
 
   async function sendForm(){
 
@@ -45,8 +44,8 @@ export default function Login({navigation}) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        nm_email: user,
-        nm_senha: password
+        email: user,
+        senha: password
       })
     });
 
@@ -64,7 +63,7 @@ export default function Login({navigation}) {
   <View style={css2.backgroud}>
       <View style={css2.containerlogo}>
           <Text style={css2.nome}>W-click{'\n\n'}</Text>
-  <Text style={css2.nome}>Service </Text>
+  <Text style={css2.nome}>Service  </Text>
           <Image style={css2.logo} source={require('../img/logo/logo.jpg')}/>
       </View>
 
