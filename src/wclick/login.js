@@ -19,10 +19,11 @@ export default function Login({navigation}) {
   const[password, setPassword] =  useState(null);
   const[login,setLogin] = useState();
   
+
   const usersenha = () =>
   Alert.alert(
-    "Error",
-    "Usuário ou senha inválidos",
+    "Falhou",
+    "Usuario e senha incorreto!",
     [
       {
         text: "Cancel",
@@ -33,6 +34,7 @@ export default function Login({navigation}) {
     ],
     { cancelable: false }
   );    
+
 
   async function sendForm(){
 
@@ -54,7 +56,7 @@ export default function Login({navigation}) {
       usersenha();
       await AsyncStorage.clear();
     }else{
-     let userData =await AsyncStorage.setItem('userData', JSON.stringify(json));
+     let userData = await AsyncStorage.setItem('userData', JSON.stringify(json));
      navigation.navigate('Home');
     }
   }

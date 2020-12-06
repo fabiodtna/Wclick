@@ -6,13 +6,39 @@
         TextInput, 
         TouchableOpacity, 
         Image,
-        ScrollView} from 'react-native'
+        ScrollView,
+        FlatList,
+        SafeAreaView} from 'react-native'
+    
         import { cssH } from '../../css/cssH';
 
     export default function Home({navigation}) {
 
+    const [feed, setFeed] = useState([]);
+    //user logado
     const [user, setUser]= useState();
+    
+   
+    //ID post
+    const [idpost, setIpost]= useState();
+    //ID do user
     const [iduser, setIduser]= useState();
+    //nome userpost
+    const [userpost, setUserpost]= useState();
+    //categoria post
+    const [cat, setCat]= useState();
+    //descrção post
+    const [descri, setDescri]= useState();
+    //enderço do post
+    const [ende, setEnde]= useState();
+
+    global.IDpost = idpost;
+    global.IDuser = iduser;
+    global.nameuser = userpost;
+    global.postcat = cat;
+    global.postdesc = descri;
+    global.postend = ende;
+    
 
     useEffect(()=>{
         async function getUser(){
@@ -21,16 +47,30 @@
             let json=JSON.parse(name);
             let id=JSON.parse(iduser);
             setIduser(id.id);
-            setUser(json.nm_nome);
+            setUser(json.nm_nome); 
         }
         getUser();
     },[]);
 
+    
+    useEffect(()=>{
+        async function loadfeed(){
+
+            let response= await fetch('http:/10.0.0.108:3333/Posts');
+
+            const Feeddata = await response.json();
+            setFeed(Feeddata);
+    }
+    loadfeed();
+    },[]);
+
+    
+
     return (
         <KeyboardAvoidingView style={cssH.container}>
             <View style={cssH.view1}>
-                <Image style={cssH.Userlogo} source={require('../../img/avatar/defalt.png')}/> 
-                <Text style={cssH.textname}>{user}-{iduser}</Text>
+                <Image style={cssH.Userlogo}source={require('../../img/avatar/defalt.png')}/> 
+                <Text style={cssH.textname}>{user}</Text>
                 <Text style={cssH.editar}>Editar</Text> 
                 <Text style={cssH.sair}>Sair</Text>
             </View>
@@ -56,6 +96,7 @@
                     <Text style={{fontSize:13}}>Rank</Text>
                 </TouchableOpacity>
             </View>
+            
             <View style={cssH.view4}>
                     <View style={cssH.categoria}>
                         <Text style={cssH.Tcategoria}>Celular</Text>
@@ -72,112 +113,37 @@
                         
                     </View> 
 
-
-                <ScrollView showsVerticalScrollIndicator={false}
-                style={cssH.anuncios}>
-                    <View style={cssH.poste}>
-                        <TouchableOpacity onPress={() => navigation.navigate('Anuncio')}>
-                          <View style={cssH.Postcon}>
-                                <View style={cssH.VPavatarnome}>
-                                <Image style={cssH.Auserlogo} source={require('../../img/avatar/2.png')}/> 
-                                <Text style={cssH.Ausernome}>Carla</Text>
+                    <SafeAreaView style={cssH.anuncios}>
+                        <FlatList
+                        data={feed}
+                        keyExtractor={item => item.id}
+                        renderItem={({ item }) => {
+                            return (
+                                <TouchableOpacity onPress={() => navigation.navigate('Anuncio') ||
+                                 setIpost(item.id)||
+                                 setUserpost(item.nm_user)||
+                                 setCat(item.nm_categoria)||
+                                 setDescri(item.nm_descricao)|| 
+                                 setEnde(item.nm_endereco)}>
+                                <View style={cssH.poste}>
+                                  <View style={cssH.Postcon}>
+                                        <View style={cssH.VPavatarnome}>
+                                        <Image style={cssH.Auserlogo} source={require('../../img/avatar/3.png')}/> 
+                                        <Text style={cssH.Ausernome}>{item.nm_user}</Text>
+                                        </View>
+                                        <Text style={cssH.Postext}>
+                                        {item.nm_descricao} 
+                                        </Text>
+                                    </View>
                                 </View>
-                                <Text style={cssH.Postext}>
+                            </TouchableOpacity>
+                            
+                            );
+                        }}
+                        />
 
-                                Touch do motorola motoE4 não funciona
-                                
-                                </Text>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={cssH.poste}>
-                    <TouchableOpacity onPress={() => navigation.navigate('Anuncio')}>
-                          <View style={cssH.Postcon}>
-                                <View style={cssH.VPavatarnome}>
-                                <Image style={cssH.Auserlogo} source={require('../../img/avatar/1.png')}/> 
-                                <Text style={cssH.Ausernome}>Joana</Text>
-                                </View>
-                                <Text style={cssH.Postext}>
-
-                                Arcondicionado parou de funcionar
-                                marca 'seila'
-
-                                
-                                </Text>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={cssH.poste}>
-                    <TouchableOpacity onPress={() => navigation.navigate('Anuncio')}>
-                          <View style={cssH.Postcon}>
-                                <View style={cssH.VPavatarnome}>
-                                <Image style={cssH.Auserlogo} source={require('../../img/avatar/4.png')}/> 
-                                <Text style={cssH.Ausernome}>João</Text>
-                                </View>
-                                <Text style={cssH.Postext}>
-
-                                Meu Notebook Positivo está com problemas no teclado!
-
-                                
-                                </Text>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={cssH.poste}>
-                    <TouchableOpacity onPress={() => navigation.navigate('Anuncio')}>
-                          <View style={cssH.Postcon}>
-                                <View style={cssH.VPavatarnome}>
-                                <Image style={cssH.Auserlogo} source={require('../../img/avatar/5.png')}/> 
-                                <Text style={cssH.Ausernome}>Carlos</Text>
-                                </View>
-                                <Text style={cssH.Postext}>
-
-                                Preciso de uma tecnico minha TV esta com defeito
-                                
-                                </Text>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={cssH.poste}>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                    </View>
-                    <View style={cssH.poste}>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                        <Text>
-                            sad
-                        </Text>
-                    </View>
-                    <View style={cssH.Uposte}>
-                  <Text>The End!</Text>
-                    </View>
-
-                </ScrollView>
-            </View>
+                    </SafeAreaView>
+           </View>
 
         </KeyboardAvoidingView>
     )

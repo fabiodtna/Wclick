@@ -6,38 +6,42 @@ const cssH = StyleSheet.create({
     container:{
         flex:1,
         backgroundColor:'#26A6A4',
-        alignItems:"center"
+        alignItems:'center'
     },
     
     view1:{
-        flex:1,
-        padding:25,
+        padding:10,
         flexDirection: 'row',
-        marginTop:'8%',
-        alignItems:'center'
+        marginTop:'7%',
     },
     Userlogo:{
-        marginLeft:'5%',
-        marginRight:'2%',
+        marginLeft:'2%',
+        marginRight:'3%',
         width: 50,
         height: 50,
         borderRadius:25,
+        marginRight:'50%'
     },
     textname:{
-        fontSize:20,
-        marginRight:'30%'
+        position:'absolute',
+        marginLeft:'23%',
+        marginTop:'6%',
+        fontSize:16
     },
     editar:{   
         fontSize:15,
+        marginTop:'3%'
     },
     sair:{
         fontSize:15,
-        marginLeft:'2%'
+        marginLeft:'5%',
+        marginTop:'3%',
+        marginRight:'3%'
     },
 
     view2:{
         flexDirection: 'row',
-        marginTop:'3%'
+        marginTop:'1%'
     },
     pesquisa:{
         backgroundColor:'#C4C4C4',
@@ -56,7 +60,7 @@ const cssH = StyleSheet.create({
     },
     view3:{
         flexDirection: 'row',
-        marginTop:'3%'
+        marginTop:'3%',
     },
     Adefeito:{
         backgroundColor:'#4E6DDB',
@@ -83,12 +87,13 @@ const cssH = StyleSheet.create({
         marginTop:'2%',
     },
     categoria:{
+        position:'relative',
         flexDirection:'column',
         backgroundColor:'#035250',
         alignItems:'center',
         justifyContent:'center',
         width:'27%',
-        height: '60%',
+        height: 330,
         borderRadius:10,
         marginTop:'2%',
         marginLeft:'2%',
@@ -111,8 +116,9 @@ const cssH = StyleSheet.create({
         marginTop:'20%'
     },
     anuncios:{
-        marginBottom:150,
-        flex:1
+        flex:1,
+        height:'82%',
+        marginTop:'3%'
     },
     poste:{
         flex: 1,
@@ -132,27 +138,26 @@ const cssH = StyleSheet.create({
     },
     VPavatarnome:{
         flexDirection:'row',
-        marginTop:'5%'
+        marginTop:'7%'
     },
     Auserlogo:{
-        width: 30,
-        height: 30,
+        width: 35,
+        height: 35,
         borderRadius:20,
         marginRight:'3%'
     },
     Ausernome:{
+        fontSize:16,
         marginTop:'3%',
-        marginRight:'45%'
+        marginRight:'65%',
+        fontWeight:'bold'
     },
     Postext:{
+        fontSize:15,
+        marginLeft:'5%',
         marginTop:'3%'
     },
-    Uposte:{
-        marginTop:25,
-        marginBottom:40,
-        alignItems:'center'
-        
-    }
+  
 });
 
   export {cssH};

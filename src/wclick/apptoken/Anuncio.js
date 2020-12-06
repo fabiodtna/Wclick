@@ -1,4 +1,4 @@
-import React from 'react'
+import React,  {useState, useEffect} from 'react'
 import { 
     View, 
     Text, 
@@ -9,26 +9,24 @@ import {
 import { cssA } from '../../css/cssA';
 import MapView from 'react-native-maps';
 
-export default function CriarAnuncio({navigation}){
+export default function Anuncio({navigation}){
+  
     return (
         <View style={cssA.containerPrincipal}>
-            <TouchableOpacity  onPress={() => navigation.navigate('Home')}>
-                <Image style={cssA.seta}
-                source={require('../../img/logo/seta.png')}/>
-            </TouchableOpacity>
             <ScrollView>
             <View style={cssA.container1}>
                 <View style={{flexDirection:'row', marginTop:'5%'}}>
                     <Image style={cssA.fotoUser}
                     source={require('../../img/avatar/defalt.png')}/> 
-                    <Text style={cssA.User}> User </Text>
+                    <Text style={cssA.User}>{global.nameuser} </Text>
                 </View>
             
                 <View style={cssA.Mensag}>
                     <ScrollView>
                         <Text
                         style={cssA.textoD}>
-                            Touch do motorola motoE4 não funciona</Text>
+                            {global.postdesc}</Text>
+                         <Text>{global.postend}</Text>
                     </ScrollView>
                     
                     <View style={{flexDirection:'row',}}>
@@ -52,11 +50,8 @@ export default function CriarAnuncio({navigation}){
                     <TouchableOpacity style={cssA.voltar}>
                         <Text style={cssA.Tvoltar}>voltar</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={cssA.chat} >
-                        <Text style={cssA.Tchat}>Chat</Text>
-                    </TouchableOpacity>
                 </View>
-            </ScrollView>
+                </ScrollView>
         </View>
     )
 }

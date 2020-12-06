@@ -52,7 +52,6 @@ import {
                 nm_email: email,
                 senha: senha,
                 id_cl_tc: clit,
-                
                 nm_descricao: descricao, 
                 nr_telefone: celular
          })
@@ -89,7 +88,7 @@ import {
       );
     
     async function verif(){
-        if(email == null || senha == null || clit == null || nome == null){
+        if(email == null || senha == null || clit == null || nome == null || cidade == 1){
             alert('Preencha os campos');
         }
         else if (senha != confsenha ) {
@@ -143,15 +142,14 @@ import {
                         <Text style={cssCD.text} >Cidade: </Text>
                         <Picker
                             selectedValue={selectedValue}
-                            style={{ height: 40, width: 150}}
+                            style={{ height: 40, width:150}}
                             onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue) || setCidade(itemValue)}
                             >
-                            <Picker.Item label="Select city" value="0"/>
-                            <Picker.Item label="Itanhaém" value="1" />
-                            <Picker.Item label="São Paulo" value="2" />
-                            <Picker.Item label="Mongaguá" value="3"/>
+                            <Picker.Item label="Select" value="1" />
+                            <Picker.Item label="Itanhaém" value="2" />
+                            <Picker.Item label="São Paulo" value="3" />
+                            <Picker.Item label="Mongaguá" value="4"/>
                         </Picker>
-                        <Text>{selectedValue}</Text>
                     </View>
                     <View style={cssCD.Vdata}>
                         <Text style={cssCD.text} >data nascimento: </Text>
@@ -228,6 +226,7 @@ import {
                                 placeholder="Descrição tecnica {Formação/Experiencia}"
                                 placeholderTextColor="grey"
                                 multiline={true}
+                                onChangeText={text=>setDescricao(text)}
                                 maxLength={400}/>
                             </ScrollView>
                         </View>

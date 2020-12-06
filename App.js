@@ -34,7 +34,7 @@ export default function App() {
                   },
                 }}/>
                 
-                <Stack.Screen name="Sobre" component={Sobre}options={{
+                <Stack.Screen name="Sobre" component={Sobre} options={{
                   title: 'Sobre',
                   headerStyle: {
                     backgroundColor: '#034443',
@@ -47,9 +47,39 @@ export default function App() {
                 }}/>
 
                 <Stack.Screen name="Home" component={Home} options={{headerShown:false}}/>
-                <Stack.Screen name="CriarAnuncio" component={CriarAnuncio} options={{headerShown:false}}/>
-                <Stack.Screen name="Anuncio" component={Anuncio} options={{headerShown:false}}/>
-                <Stack.Screen name="Chat" component={Chat} options={{headerShown:false}}/>
+                <Stack.Screen name="CriarAnuncio" component={CriarAnuncio} options={{
+                  title: 'W-Click',
+                  headerStyle: {
+                    backgroundColor: '#034443',
+                  },
+                  headerTitleAlign:'center',
+                  headerTintColor: '#fff',
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                  },
+                }}/>
+                <Stack.Screen name="Anuncio" component={Anuncio} options={{
+                  title: 'W-Click',
+                  headerStyle: {
+                    backgroundColor: '#034443',
+                  },
+                  headerTitleAlign:'center',
+                  headerTintColor: '#fff',
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                  },
+                }}/>
+                <Stack.Screen name="Chat" component={Chat} options={{
+                  title: 'W-Click',
+                  headerStyle: {
+                    backgroundColor: 'black',
+                  },
+                  headerTitleAlign:'center',
+                  headerTintColor: '#fff',
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                  },
+                }}/>
               </Stack.Navigator>
           </NavigationContainer>
   );

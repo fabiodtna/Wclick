@@ -15,7 +15,6 @@ const cssA = StyleSheet.create({
     },
 
     container1: {
-        flex: 1.3,
         backgroundColor: '#C4C4C4',
         alignItems: 'center',
         justifyContent: 'center',
@@ -24,9 +23,11 @@ const cssA = StyleSheet.create({
         borderRadius: 27,
         marginLeft: '10%',
         borderWidth: 3,
-        borderColor: 'black'
+        borderColor: 'black',
+        marginTop:'3%'
     },
     User: {
+        margin:'2%',
         fontSize: 20,
         marginRight: '50%',
         marginTop: '5%',
@@ -40,9 +41,9 @@ const cssA = StyleSheet.create({
         borderRadius: 15
     },
     Mensag: {
-        flex: 2,
+        
         alignItems: 'center',
-        width: '80%',
+        width: '70%',
         marginBottom: '5%',
         marginTop: '2%',
         borderRadius: 26,
@@ -71,13 +72,12 @@ const cssA = StyleSheet.create({
     },
 
     container2: {
-        flex: 1,
         justifyContent:'center',
         alignItems:'center',
         borderWidth: 5,
         borderColor: 'black',
         width: '80%',
-        height: 250,
+        height: 200,
         marginLeft: '10%',
         borderRadius:7,
         backgroundColor:'black'
@@ -88,35 +88,21 @@ const cssA = StyleSheet.create({
     },
 
     containerbuton: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        marginTop: '5%',
-        marginBottom: '2%',
+        marginTop: '3%',
+        alignItems:'center',
+        marginBottom:'5%'
     },
     voltar: {
         backgroundColor: '#C4C4C4',
         padding:4,
-        marginRight:'30%',
         alignItems:'center',
-        width:'30%',
+        width:'50%',
         borderRadius:7
     },
     Tvoltar:{
         fontSize:15,
         fontWeight:'bold',
     },
-    chat: {
-        backgroundColor: '#1E67AA',
-        padding:4,
-        alignItems:'center',
-        width:'20%',
-        borderRadius:7
-    },
-    Tchat:{
-        fontSize:15,
-        fontWeight:'bold',
-    },
-
 });
 
 export { cssA };

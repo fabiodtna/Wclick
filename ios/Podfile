@@ -90,6 +90,8 @@ target 'Wclick' do
 
   pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
 
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
   post_install do |installer|
     flipper_post_install(installer)
   end

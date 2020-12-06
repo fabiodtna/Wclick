@@ -1,13 +1,31 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, FlatList,SafeAreaView, TouchableOpacity, ScrollView } from 'react-native'
+import { TextInput } from 'react-native-gesture-handler';
 import {cssChat} from '../../css/cssChat';
 
-export default function chat() {
+export default function Chat() {
     return (
-        <View>
-            <Text style={cssChat.teste}>
-                teste 
-            </Text>
+        <View style={cssChat.container}>
+            <ScrollView 
+            inverted={true}
+                automaticallyAdjustContentInsets={true}>
+                <View style={cssChat.Vchat}>  
+                    <Text>
+                        nome: user
+                    </Text>
+                    <Text>
+                        mensage
+                    </Text>
+                </View>
+                      
+            </ScrollView>
+            <View style={cssChat.Vinput}> 
+                <TextInput placeholder=" mensagem" style={cssChat.inputmsg} 
+                placeholderTextColor="black"/>
+                <TouchableOpacity style={cssChat.submitchat}>
+                    <Text style={cssChat.textsubm}>enviar</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
