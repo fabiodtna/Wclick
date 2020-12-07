@@ -70,6 +70,35 @@ const cssA = StyleSheet.create({
         width:'30%',
         padding: 4,
     },
+    Iproposta:{
+        backgroundColor:'white',
+        padding:2,
+        borderWidth:1,
+        borderRadius:4
+    },
+    Vbutonsproposta:{
+        flexDirection:'row',
+        justifyContent:'center',
+        marginTop:'3%',
+        marginBottom:'3%'
+    },
+    benviar: {
+        alignItems: 'center',
+        backgroundColor: '#1E67AA',
+        borderRadius: 5,
+        marginRight:'10%',
+        width:'30%',
+        padding: 4,
+    },
+    
+    bcancel:{
+        alignItems: 'center',
+        backgroundColor: '#035250',
+        borderRadius: 5,
+        marginLeft:'10%',
+        width:'30%',
+        padding: 4,
+    },
 
     container2: {
         justifyContent:'center',

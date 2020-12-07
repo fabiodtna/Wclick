@@ -82,7 +82,7 @@ export default function CriarAnuncio({navigation}){
                         placeholderTextColor="grey"
                         multiline={true}
                         onChangeText={text=>setNmdesc(text)}
-                        maxLength={350}/>
+                        maxLength={250}/>
 
                     </ScrollView>
                     <View style={{flexDirection:'row', marginLeft:'3%'}}>

@@ -15,14 +15,20 @@
     export default function Home({navigation}) {
 
     const [feed, setFeed] = useState([]);
+    
+    
     //user logado
     const [user, setUser]= useState();
-    
+    //ID do user logado
+    const [iduser, setIduser]= useState();
+    // cliente ou tecnico
+    const [idcttc, setIdcttc]= useState();
    
+    //sobre post
     //ID post
     const [idpost, setIpost]= useState();
-    //ID do user
-    const [iduser, setIduser]= useState();
+    // Id de quem postou
+    const [iduserpost, setIiduserpost]= useState();
     //nome userpost
     const [userpost, setUserpost]= useState();
     //categoria post
@@ -31,12 +37,27 @@
     const [descri, setDescri]= useState();
     //enderço do post
     const [ende, setEnde]= useState();
-
-    global.IDpost = idpost;
+    
+    //id user logado
     global.IDuser = iduser;
+    //nome user logado
+    global.userlog = user;
+    //user cliente == 1 user tecnico == 2
+    global.tipocli = idcttc;
+
+    // telacionado ao post
+
+    //id post
+    global.IDpost = idpost;
+    // id de quem postou;
+    global.idUpost = iduserpost;
+    //nome de quem postou
     global.nameuser = userpost;
+    //categoria do post
     global.postcat = cat;
+    // descriçao post
     global.postdesc = descri;
+    // endereço fisico do user do post
     global.postend = ende;
     
 
@@ -44,8 +65,11 @@
         async function getUser(){
             let name=await AsyncStorage.getItem('userData');
             let iduser=await AsyncStorage.getItem('userData');
+            let idCLiTEC=await AsyncStorage.getItem('userData');
             let json=JSON.parse(name);
+            let idCT=JSON.parse(idCLiTEC);
             let id=JSON.parse(iduser);
+            setIdcttc(idCT.id_cl_tc);
             setIduser(id.id);
             setUser(json.nm_nome); 
         }
@@ -70,9 +94,13 @@
         <KeyboardAvoidingView style={cssH.container}>
             <View style={cssH.view1}>
                 <Image style={cssH.Userlogo}source={require('../../img/avatar/defalt.png')}/> 
-                <Text style={cssH.textname}>{user}</Text>
-                <Text style={cssH.editar}>Editar</Text> 
-                <Text style={cssH.sair}>Sair</Text>
+    <Text style={cssH.textname}>{user}-{idcttc}</Text>
+                <TouchableOpacity>
+                    <Text style={cssH.editar}>Editar</Text> 
+                </TouchableOpacity>
+               <TouchableOpacity onPress={()=> navigation.navigate('Login')  || AsyncStorage.clear('userdata')}>
+                   <Text style={cssH.sair}>Sair</Text>
+                </TouchableOpacity>
             </View>
             <View style={cssH.view2}>
                 <TextInput placeholder={' Pesquisar '} style={cssH.pesquisa}placeholderTextColor="black"  /> 
@@ -110,8 +138,13 @@
                         <Text style={cssH.Tcategoria}>TV</Text>   
                         
                             <Image style={cssH.Tlogo} source={require('../../img/logo/logo.jpg')}/> 
-                        
-                    </View> 
+                    </View>
+
+                    <View style={cssH.teste}>
+                        <TouchableOpacity onPress={()=> navigation.navigate('Chats')}>
+                            <Image style={cssH.iconchat} source={require('../../img/logo/chat.png')}/>
+                        </TouchableOpacity>  
+                    </View>
 
                     <SafeAreaView style={cssH.anuncios}>
                         <FlatList
@@ -121,6 +154,7 @@
                             return (
                                 <TouchableOpacity onPress={() => navigation.navigate('Anuncio') ||
                                  setIpost(item.id)||
+                                 setIiduserpost(item.id_usuario)||
                                  setUserpost(item.nm_user)||
                                  setCat(item.nm_categoria)||
                                  setDescri(item.nm_descricao)|| 
@@ -131,9 +165,13 @@
                                         <Image style={cssH.Auserlogo} source={require('../../img/avatar/3.png')}/> 
                                         <Text style={cssH.Ausernome}>{item.nm_user}</Text>
                                         </View>
-                                        <Text style={cssH.Postext}>
-                                        {item.nm_descricao} 
-                                        </Text>
+                                        <View style={cssH.Vpostxt}>
+                                            <Text 
+                                            numberOfLines={3} 
+                                            style={cssH.Postext}>
+                                                {item.nm_descricao}{'\n'}
+                                            </Text>
+                                        </View>
                                     </View>
                                 </View>
                             </TouchableOpacity>

@@ -3,6 +3,8 @@ const usuarioContoller = require('./controllers/Tb_usuarioController');
 const userController = require('./controllers/Tb_LoginController');
 const createpostController = require('./controllers/Tb_publicacaoController');
 const postsController = require('./controllers/Tb_postsController');
+const chatController = require('./controllers/Tb_chatController');
+const chatuserController = require('./controllers/chatController');
 
 const routes = express.Router();
 
@@ -10,6 +12,8 @@ routes.post('/Tb_usuario', usuarioContoller.store);
 routes.post('/login', userController.store);
 routes.post('/CreatePost', createpostController.store);
 routes.get('/Posts', postsController.store);
+routes.post('/Ichat', chatController.store);
+routes.post('/Mchat',chatuserController.store);
 
 
 module.exports = routes;

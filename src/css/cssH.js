@@ -115,6 +115,18 @@ const cssH = StyleSheet.create({
         borderWidth:4,
         marginTop:'20%'
     },
+    teste:{
+        position:'absolute',
+        marginTop:'100%',
+        marginLeft:'7%'
+    },
+    iconchat:{
+        borderWidth:2,
+        borderColor:'black',
+        width:50,
+        height:50,
+        borderRadius:20
+    },
     anuncios:{
         flex:1,
         height:'82%',
@@ -151,6 +163,9 @@ const cssH = StyleSheet.create({
         marginTop:'3%',
         marginRight:'65%',
         fontWeight:'bold'
+    },
+    Vpostxt:{
+        width:'90%',
     },
     Postext:{
         fontSize:15,

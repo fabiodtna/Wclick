@@ -9,7 +9,8 @@ import Sobre from './src/wclick/sobre';
 import Home from './src/wclick/apptoken/Home';
 import CriarAnuncio from './src/wclick/apptoken/CriarAnuncio';
 import Anuncio from './src/wclick/apptoken/Anuncio';
-import Chat from './src/wclick/apptoken/Chat'
+import Chat from './src/wclick/apptoken/Chat';
+import Chats from './src/wclick/apptoken/Chats';
 import Cadastro from './src/wclick/Cadastro';
 
 
@@ -70,6 +71,17 @@ export default function App() {
                   },
                 }}/>
                 <Stack.Screen name="Chat" component={Chat} options={{
+                  title: 'W-Click',
+                  headerStyle: {
+                    backgroundColor: 'black',
+                  },
+                  headerTitleAlign:'center',
+                  headerTintColor: '#fff',
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                  },
+                }}/>
+                 <Stack.Screen name="Chats" component={Chats} options={{
                   title: 'W-Click',
                   headerStyle: {
                     backgroundColor: 'black',

@@ -5,7 +5,6 @@ module.exports = {
          
         tb_publicacaos.findAll().then(function(tb_publicacaos){
         res.json(tb_publicacaos);
-        console.log(tb_publicacaos.dataValues);
     });
         
     }
