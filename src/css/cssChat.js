@@ -8,13 +8,29 @@ const cssChat = StyleSheet.create({
         alignItems:'center'
     },
     Vchat:{
-      alignItems:'center',
       backgroundColor:'white',
+      marginTop:'5%',
+      borderRadius:5,
+      width:250,
+      marginRight:'20%'
+    },
+    Tnomechat:{
+        position:'absolute',
+        marginLeft:'2%',
+        marginTop:'2%'
+    },
+    Tmsgchat:{
+        marginTop:'10%',
+        marginLeft:'10%',
+        marginRight:'2%',
+        marginBottom:'2%'
     },
 
 
     Vinput:{
         flexDirection:'row',
+        marginLeft:'5%',
+        marginTop:'1%'
     },
     inputmsg:{
         backgroundColor:'#C4C4C4',
@@ -30,12 +46,13 @@ const cssChat = StyleSheet.create({
     submitchat:{
         backgroundColor:'#1E67AA',
         alignItems:'center',
-        width:'15%',
+        width:'20%',
         marginBottom: '5%',
         marginTop:'1%',
         color:'#222',
         borderRadius:10,
         padding:5,
+        marginRight:'4%'
     },
     textsubm:{
         fontSize:15,
@@ -47,7 +64,7 @@ const cssChat = StyleSheet.create({
 
 
 
-    //chats
+    //chat user
 
     Vchats:{
         alignItems:'center',
@@ -79,9 +96,9 @@ const cssChat = StyleSheet.create({
     },
     VbuttonPro:{
         flexDirection:'row',
-        marginTop:'5%'
     },
     Baceitar:{
+        marginTop:'5%',
         alignItems:'center',
         marginLeft:'2%',
         marginRight:'15%',
@@ -92,6 +109,7 @@ const cssChat = StyleSheet.create({
         borderRadius:7
     },
     Brecusar:{
+        marginTop:'5%',
         alignItems:'center',
         marginLeft:'15%',
         backgroundColor: '#999999',
@@ -101,6 +119,11 @@ const cssChat = StyleSheet.create({
         borderRadius:7
 
     },
+    AcepRecus:{
+        flexDirection:'row', 
+        alignItems:'center'
+    },
+
     
     //chat tecnico
     VTTchats:{

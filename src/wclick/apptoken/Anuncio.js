@@ -62,7 +62,7 @@ export default function Anuncio({navigation}){
     
 
     async function sendProposta(){
-        let response= await fetch('http:/10.0.0.108:3333/Ichat',{
+            fetch('http:/10.0.0.108:3333/Ichat',{
             method:'POST',
             headers:{
                 Accept:'application/json',

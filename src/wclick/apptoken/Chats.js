@@ -14,7 +14,15 @@ export default function Chats({navigation}) {
 
     const[idtecnico, setIdtecnico] = useState();
 
+    const[iduserdopost, setIduserpost] = useState();
+
+    const[idpost, setIdpost] = useState();
+
+    global.id_cliID = iduserdopost;
+
     global.id_tecID = idtecnico;
+
+    global.idpost = idpost;
 
     global.chat = chat;
 
@@ -41,7 +49,7 @@ export default function Chats({navigation}) {
                 data={chat}
                 keyExtractor={item => item.id}
                 renderItem={({ item }) => {
-                    if( item.id_user == global.IDuser &&  global.tipocli == 1){
+                    if( item.id_user == global.IDuser &&  global.tipocli == 1 && item.nm_descpost != ''){
                         return (
                            
                                 <View style={cssChat.Vchats}> 
@@ -64,8 +72,8 @@ export default function Chats({navigation}) {
                                         <View style={cssChat.VbuttonPro} >
 
                                             <TouchableOpacity style={cssChat.Baceitar}
-                                            onPress={()=> navigation.navigate('Chat') || setIdtecnico(item.id_usert)}>
-                                                <Text>Aceitar</Text>
+                                            onPress={()=> navigation.navigate('Chat') || setIdtecnico(item.id_usert) || setIdpost(item.id)}>
+                                                <Text>Chat</Text>
                                             </TouchableOpacity>
 
                                             <TouchableOpacity style={cssChat.Brecusar}>
@@ -84,10 +92,10 @@ export default function Chats({navigation}) {
                 data={chat}
                 keyExtractor={item => item.id}
                 renderItem={({ item }) => {
-                    if(item.id_usert == global.IDuser &&  global.tipocli == 2){
+                    if(item.id_usert == global.IDuser &&  global.tipocli == 2 && item.nm_descpost != ''){
                         return (
                            <TouchableOpacity
-                           onPress={()=> navigation.navigate('Chat')}> 
+                           onPress={()=> navigation.navigate('Chat') ||setIduserpost(item.id_user) || setIdpost(item.id)}> 
                                <View style={cssChat.VTTchats}> 
                                         <Text style={cssChat.Ttextchats}>Propostas Feitas</Text>
                                         <Text numberOfLines={2}>
