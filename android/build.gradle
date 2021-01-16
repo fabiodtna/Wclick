@@ -18,6 +18,17 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
+buildscript {
+    ext {
+        buildToolsVersion = "xxx"
+        minSdkVersion = xxx
+        compileSdkVersion = xxx
+        targetSdkVersion = xxx
+        supportLibVersion = "xxx"
+        playServicesVersion = "10.0.0" // or find latest version
+        androidMapsUtilsVersion = "xxx"
+    }
+}
 
 allprojects {
     repositories {

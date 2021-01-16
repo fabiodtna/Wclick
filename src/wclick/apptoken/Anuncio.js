@@ -9,8 +9,9 @@ import {
     SafeAreaView, 
     TextInput} from 'react-native'
 
-import { cssA } from '../../css/cssA';
 import MapView from 'react-native-maps';
+import { cssA } from '../../css/cssA';
+
 
 export default function Anuncio({navigation}){
 
@@ -116,7 +117,7 @@ export default function Anuncio({navigation}){
                                 placeholderTextColor="grey"
                                 multiline={true}
                                 onChangeText={()=>{}}
-                                maxLength={70}
+                                maxLength={50}
                                 onChangeText={text=>setMSG(text)}/>
                             <View style={cssA.Vbutonsproposta}>
 
@@ -136,10 +137,10 @@ export default function Anuncio({navigation}){
                  ) : null}
             </View>
                 
-                <View style={cssA.container2}>
-                <Image style={cssA.maps} source={require('../../img/maps.jpg')}/>
+               <MapView style={cssA.Vmap}>
 
-                </View>
+
+               </MapView>
 
                 <View style={cssA.containerbuton}>
                     <TouchableOpacity style={cssA.voltar}>

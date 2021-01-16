@@ -10,24 +10,20 @@ import {
     TextInput,
     TouchableOpacity,
     Picker,
-    Alert
+    Alert, 
+    StyleSheet
     } from 'react-native'; 
-    import { cssCD } from '../css/cssCD';  
+     
 
-    export default function Cadastro({navigation}) {
+    export default function Editar({navigation}) {
 
     //select cidades!
     const [selectedValue, setSelectedValue] = useState("1");
 
     //form 
-    const [nome, setNome] = useState();
-    const [sobrenome, setSobrenome] = useState();
     const [celular, setCelular] = useState();
     const [cidade, setCidade] = useState();
-    const [dateN, setDateN] = useState();
-    const [email, setEmail] = useState();
-    const [senha, setSenha] = useState();
-    const [confsenha, setConfsenha] = useState(); 
+ 
     const [descricao, setDescricao] = useState();   
 
      // select cliente tecnico!
@@ -35,7 +31,7 @@ import {
      const [cliente, setCliente] = React.useState();
      const [clit, setClit] = React.useState();
 
-     const [avatar, setAvatar] = React.useState(require('../img/avatar/defalt.png'));
+     const [avatar, setAvatar] = React.useState(require('../../img/avatar/defalt.png'));
 
      const[cont, SetCont] = React.useState(1);
 
@@ -44,21 +40,21 @@ import {
      
      function selectAvatar(){
          if(cont == 1){
-             setAvatar(require('../img/avatar/1.png'));
+             setAvatar(require('../../img/avatar/1.png'));
          }else if( cont == 2){
-            setAvatar(require('../img/avatar/2.png'));
+            setAvatar(require('../../img/avatar/2.png'));
          }else if( cont == 3){
-            setAvatar(require('../img/avatar/3.png'));
+            setAvatar(require('../../img/avatar/3.png'));
          }else if( cont == 4){
-            setAvatar(require('../img/avatar/4.png'));
+            setAvatar(require('../../img/avatar/4.png'));
          }else if( cont == 5){
-            setAvatar(require('../img/avatar/5.png'));
+            setAvatar(require('../../img/avatar/5.png'));
          }else if( cont == 6){
-            setAvatar(require('../img/avatar/6.png'));
+            setAvatar(require('../../img/avatar/6.png'));
          }else if( cont == 7){
-            setAvatar(require('../img/avatar/7.png'));
+            setAvatar(require('../../img/avatar/7.png'));
          }else if( cont == 8){
-            setAvatar(require('../img/avatar/defalt.png'));
+            setAvatar(require('../../img/avatar/defalt.png'));
          }else{
              SetCont(1);
          }
@@ -132,46 +128,37 @@ import {
      const [shouldShow, setShouldShow] = useState(false);
     
     return (
-        <View style={cssCD.container}>
-            <ScrollView>
-                <View style={cssCD.input}>
-                    <View style={cssCD.Vnome}>
-                        <Text style={cssCD.text}>Nome:</Text>
-                        <View style={{flexDirection:"row", flex:1}}>
-                            <View style={{flex:1}}> 
-                                <TextInput style={cssCD.Inome}
-                                onChangeText={text=>setNome(text)}
-                                maxLength={10}
-                                />
-                            </View>
-                            <Image style={cssCD.Userlogo} source={avatar}/>
+        <View style={styles.container}>
+            <ScrollView style={{ marginTop:'5%'}}>
+                <View style={styles.nomeavatar}>
+                    <View style={styles.Vnome}>
+                        <View style={{flexDirection:"row", flex:1, marginBottom:'5%'}}>
+
+                         
+                            <Image style={styles.Userlogo} source={avatar}/>
                             <TouchableOpacity onPress={()=>{ SetCont (cont + 1) || selectAvatar()}}
                             style={{marginTop:'3%'}}>
-                                <Image style={cssCD.seta} source={require('../img/logo/seta1.png')}/>
+                                <Image style={styles.seta} source={require('../../img/logo/seta1.png')}/>
                             </TouchableOpacity>
                             
                         </View>
+                         <Text style={styles.nome}>Nome</Text>
                     </View>
-                    <View style={cssCD.VSnome}> 
-                            <Text style={cssCD.text}>Sobrenome: </Text>
-                            <TextInput style={cssCD.Isobrenome}
-                             onChangeText={text=>setSobrenome(text)}
-                            maxLength={30}/>
-                    </View>
+                   
                 </View>
-                <View style={cssCD.VCell}>
-                    <Text style={cssCD.text}>Celular:</Text>
+                <View style={styles.VCell}>
+                    <Text style={styles.text}>Celular:</Text>
                     <TextInput
                     onChangeText={text=>setCelular(text)}
-                    style={cssCD.Icell}
+                    style={styles.Icell}
                     maxLength={17}
                     placeholder="+55(012)9910-0001"
                     keyboardType="numeric"
                     />
                 </View>
-                <View style={cssCD.CDview}>
-                    <View style={cssCD.Icidades}>
-                        <Text style={cssCD.text} >Cidade: </Text>
+                <View style={styles.CDview}>
+                    <View style={styles.Icidades}>
+                        <Text style={styles.text} >Cidade: </Text>
                         <Picker
                             selectedValue={selectedValue}
                             style={{ height: 40, width:150}}
@@ -183,43 +170,12 @@ import {
                             <Picker.Item label="Mongaguá" value="4"/>
                         </Picker>
                     </View>
-                    <View style={cssCD.Vdata}>
-                        <Text style={cssCD.text} >data nascimento: </Text>
-                        <TextInput style={cssCD.data}
-                            onChangeText={text=>setDateN(text)}
-                            keyboardType="numeric"
-                            placeholder=' 23-07-2002'
-                            maxLength={10}
-                        />
-                    </View>
+                  
                 </View>
-                <View style={cssCD.Vlogin}>
-                    <Text style={cssCD.text}>Email: </Text>
-                        <TextInput
-                            style={cssCD.loginsenha}
-                            autoCorrect={false}
-                            onChangeText={text=>setEmail(text)}
-                            />
-
-                    <Text style={cssCD.text}>Senha: </Text>
-                        <TextInput
-                        style={cssCD.loginsenha}
-                        autoCorrect={false}
-                        secureTextEntry={true}
-                        onChangeText={text=>setSenha(text)}
-                        />
-
-                    <Text style={cssCD.text}>Confirmar Senha: </Text>
-                        <TextInput
-                        style={cssCD.loginsenha}
-                        autoCorrect={false}
-                        secureTextEntry={true}
-                        onChangeText={text=>setConfsenha(text)}
-                        />     
-                </View>
-                <View style={cssCD.clientetecnico}>
-                    <View style={cssCD.chekcli}>
-                        <Text style={cssCD.text}>Cliente</Text>
+               
+                <View style={styles.clientetecnico}>
+                    <View style={styles.chekcli}>
+                        <Text style={styles.text}>Cliente</Text>
                         <Checkbox
                         status={cliente ? 'checked' : 'unchecked'}
                         onPress={()=>{
@@ -231,8 +187,8 @@ import {
                         }}
                         />
                     </View>
-                    <View style={cssCD.chekcli}>
-                        <Text style={cssCD.text}>Tecnico</Text>
+                    <View style={styles.chekcli}>
+                        <Text style={styles.text}>Tecnico</Text>
                         <Checkbox
                             status={tecnico ? 'checked' : 'unchecked'}
                             onPress={() => {
@@ -247,13 +203,12 @@ import {
                     </View>
                 </View>
                 {shouldShow ? (
-                    <SafeAreaView style={cssCD.Vdescricao}>
+                    <SafeAreaView style={styles.Vdescricao}>
                     
                         <View>
-                        <ScrollView showsVerticalScrollIndicator={false} 
-                        style={cssCD.Caixadesc}>
+                        <ScrollView showsVerticalScrollIndicator={false} >
                                 <TextInput 
-                                style={cssCD.text}
+                                style={styles.text}
                                 underlineColorAndroid="transparent"
                                 placeholder="Descrição tecnica {Formação/Experiencia}"
                                 placeholderTextColor="grey"
@@ -264,13 +219,129 @@ import {
                         </View>
                     </SafeAreaView>
                  ) : null}
-                <View style={cssCD.Vsubmit}>
-                <TouchableOpacity style={cssCD.submit}
+                <View style={styles.Vsubmit}>
+                <TouchableOpacity style={styles.submit}
                 onPress={()=>verif()}>
-                    <Text style={cssCD.text}>Cadastrar</Text>
+                    <Text style={styles.text}>Editar</Text>
                 </TouchableOpacity>
                 </View>
             </ScrollView>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    
+    container:{
+        flex:1,
+        backgroundColor:'#26A6A4',
+    },
+    text:{
+        fontSize:15,
+        color:'black',
+        fontWeight:'bold'
+    },  
+    nome:{
+        fontSize:20,
+        color:'black',
+        fontWeight:'bold'
+    },
+    nomeavatar:{
+        flexDirection:'row',
+        flex:1,
+        marginTop:'5%',
+    },
+    Vnome:{
+        flex:1,
+        width:'100%',
+        alignItems:'center'
+    },
+    Inome:{
+        marginTop:'1%',
+        borderColor:"black",
+        borderWidth: 1,
+        borderRadius:7,
+        width:'70%',
+        padding:2,
+        backgroundColor:'white',
+        fontWeight:'bold',
+        color:"black"
+    },
+    Userlogo:{
+        marginLeft:'10%',
+        marginRight:'2%',
+        width: 100,
+        height: 100,
+        borderRadius:25,
+    },
+    seta:{
+        marginTop:'100%',
+        width: 25,
+        height: 25,
+    },
+    VCell:{
+        alignItems:'center',
+        marginTop:'5%',
+        marginBottom:'3%'
+    },
+    Icell:{
+        marginTop:'1%',
+        backgroundColor:'white',
+        width:'50%',
+        fontWeight:'bold',
+        color:"black",
+        borderColor:"black",
+        borderWidth: 1,
+        borderRadius:7,
+        padding:2
+    },
+    CDview:{
+        flex:1,
+        flexDirection:'row',
+        marginLeft:'30%'
+    },
+    Icidades:{
+        marginTop:"3%",
+        width:'30%',
+   },
+   clientetecnico:{
+    flex:1,
+    alignItems:'center',
+    marginLeft:'30%',
+    flexDirection:'row'
+
+  },
+  chekcli:{
+      marginRight:"15%"
+  },
+  Vsubmit:{
+    marginBottom:'5%',
+    alignItems:"center",
+    marginTop:"3%"
+},
+submit:{
+    alignItems:"center",
+    justifyContent:"center",
+    backgroundColor:'#1E67AA',
+    width:"80%",
+    padding:10,
+    borderColor:"white",
+    borderWidth: 1,
+    borderRadius:7,
+},
+Vdescricao:{
+  flex:1,
+  marginLeft:'10%',
+  marginTop:'3%',
+},
+Vdescricao:{
+  marginLeft:'13%',
+  marginRight:'13%',
+  backgroundColor:'white',
+  padding:20,
+  borderColor:"black",
+  borderWidth: 1,
+  borderRadius:7,
+}
+
+})

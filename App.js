@@ -12,6 +12,8 @@ import Anuncio from './src/wclick/apptoken/Anuncio';
 import Chat from './src/wclick/apptoken/Chat';
 import Chats from './src/wclick/apptoken/Chats';
 import Cadastro from './src/wclick/Cadastro';
+import Editar from './src/wclick/apptoken/Editar';
+import Perfil from './src/wclick/apptoken/perfil';
 
 
 export default function App() {
@@ -48,6 +50,32 @@ export default function App() {
                 }}/>
 
                 <Stack.Screen name="Home" component={Home} options={{headerShown:false}}/>
+                
+                <Stack.Screen name="Editar" component={Editar} 
+                options={{
+                  title: 'W-Click',
+                  headerStyle: {
+                    backgroundColor: '#034443',
+                  },
+                  headerTitleAlign:'center',
+                  headerTintColor: '#fff',
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                  },
+                }}/>
+                
+                <Stack.Screen name="Perfil" component={Perfil} options={{
+                  title: 'W-Click',
+                  headerStyle: {
+                    backgroundColor: '#034443',
+                  },
+                  headerTitleAlign:'center',
+                  headerTintColor: '#fff',
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                  },
+                }}/>
+                
                 <Stack.Screen name="CriarAnuncio" component={CriarAnuncio} options={{
                   title: 'W-Click',
                   headerStyle: {

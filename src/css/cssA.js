@@ -100,7 +100,7 @@ const cssA = StyleSheet.create({
         padding: 4,
     },
 
-    container2: {
+    Vmap: {
         justifyContent:'center',
         alignItems:'center',
         borderWidth: 5,
@@ -109,7 +109,7 @@ const cssA = StyleSheet.create({
         height: 200,
         marginLeft: '10%',
         borderRadius:7,
-        backgroundColor:'black'
+       
     },
     maps:{
         width:'100%', 

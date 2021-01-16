@@ -15,6 +15,11 @@
       "**/*"
     ],
     "android":{
+      "config":{
+        "googleMaps":{
+          "apiKey":"AIzaSyBI1301CQ7wcRX6lvkbILhHz1sr_Ll7q40"
+        }
+      },
     "package": "com.Wcliktest.dev"
     }
   }

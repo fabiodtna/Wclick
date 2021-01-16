@@ -85,7 +85,7 @@
             const Feeddata = await response.json();
             setFeed(Feeddata);
     }
-    loadfeed();
+    // requisição => loadfeed();
     },[]);
 
     
@@ -93,13 +93,15 @@
     return (
         <KeyboardAvoidingView style={cssH.container}>
             <View style={cssH.view1}>
-                <Image style={cssH.Userlogo}source={require('../../img/avatar/defalt.png')}/> 
+                <TouchableOpacity onPress={()=> navigation.navigate('Perfil')}>
+                    <Image style={cssH.Userlogo}source={require('../../img/avatar/defalt.png')}/> 
+                </TouchableOpacity>
     <Text style={cssH.textname}>{user}-{idcttc}</Text>
                 <TouchableOpacity>
-                    <Text style={cssH.editar}>Editar</Text> 
+                    <Text style={cssH.editar} onPress={()=> navigation.navigate('Editar')}>Editar</Text> 
                 </TouchableOpacity>
-               <TouchableOpacity onPress={()=> navigation.navigate('Login')  || AsyncStorage.clear('userdata')}>
-                   <Text style={cssH.sair}>Sair</Text>
+               <TouchableOpacity onPress={()=> navigation.navigate('Login')}>
+                   <Text style={cssH.sair}>  Sair</Text>
                 </TouchableOpacity>
             </View>
             <View style={cssH.view2}>
@@ -120,7 +122,7 @@
                             Aparelho com defeito?
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={cssH.rank}> 
+                <TouchableOpacity style={cssH.rank} onPress={()=>navigation.navigate('Anuncio')}> 
                     <Text style={{fontSize:13}}>Rank</Text>
                 </TouchableOpacity>
             </View>

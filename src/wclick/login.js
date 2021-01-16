@@ -51,7 +51,7 @@ export default function Login({navigation}) {
       })
     });
 
-    let json =await response.json();
+    let json = await response.json();
     if(json === 'error'){
       usersenha();
       await AsyncStorage.clear();
@@ -91,7 +91,7 @@ export default function Login({navigation}) {
             onChangeText={text=>setPassword(text)}
             />
 
-            <TouchableOpacity style={css2.submit} onPress={() => sendForm()}>
+            <TouchableOpacity style={css2.submit} onPress={() =>navigation.navigate('Home')}>
                 <Text style={css2.subtext}>Entrar</Text>
             </TouchableOpacity>
 
