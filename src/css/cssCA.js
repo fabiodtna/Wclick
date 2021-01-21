@@ -79,8 +79,8 @@ const cssCA = StyleSheet.create({
         backgroundColor:'black'
     },
     maps:{
-        width:'100%', 
-        height:'100%',
+        width:'99%', 
+        height:'99%',
     },
 
     containerbuton: {

@@ -15,6 +15,10 @@ import { cssA } from '../../css/cssA';
 
 export default function Anuncio({navigation}){
 
+    const[latitude, setLatitude] = useState(-24.1689706);
+    const[longitude, setLongitude] = useState(-46.7851603);
+
+
    
     const [shouldShow, setShouldShow] = useState(false);
     
@@ -137,10 +141,23 @@ export default function Anuncio({navigation}){
                  ) : null}
             </View>
                 
-               <MapView style={cssA.Vmap}>
-
-
-               </MapView>
+               <MapView style={cssA.Vmap}
+                    initialRegion={{
+                    latitude,
+                    longitude,
+                    latitudeDelta: 0.080,
+                    longitudeDelta: 0.080, 
+               }}
+             >
+                   <MapView.Marker
+                    coordinate={{
+                        latitude,
+                        longitude
+                    }}/>
+              
+             </MapView>
+            
+              
 
                 <View style={cssA.containerbuton}>
                     <TouchableOpacity style={cssA.voltar}>

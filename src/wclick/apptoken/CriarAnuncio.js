@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Component } from "react";
-import { AsyncStorage } from 'react-native';
+import { AsyncStorage, PermissionsAndroid } from 'react-native';
 import { 
     View, 
     Text, 
@@ -8,24 +8,52 @@ import {
     ScrollView, 
     TouchableOpacity,
     Picker, 
-    Alert
+    Alert,
+    Button
     } from 'react-native'
 import MapView from 'react-native-maps';
 import { cssCA } from '../../css/cssCA';
-import { List } from 'react-native-paper';
+import Geocoder from 'react-native-geocoding';
 
-import Geolocation from 'react-native-geolocation-service';
-
+import * as Location from 'expo-location';
   
 export default function CriarAnuncio({navigation}){
+    
+    const [location, setLocation] = useState();
+    const [errorMsg, setErrorMsg] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    })();
+  }, []);
+
+  let text = 'Waiting..';
+  if (errorMsg) {
+    text = errorMsg;
+  } else if (location) {
+    text = JSON.stringify(location);
+  }
+
+
+
+
+
 
     const [name, setUser]= useState();
-    const [iduser, setIduser] = useState();
+    const [iduser, setIduser] = useState(); 
     const [nmdesc, setNmdesc] = useState();
     const [Categoria, setCategorias] = useState();
     const [nmend, setEnd] = useState();
 
-    useEffect(()=>{
+   /* useEffect(()=>{
         async function getUser(){
             let name=await AsyncStorage.getItem('userData');
             let iduser=await AsyncStorage.getItem('userData');
@@ -35,7 +63,7 @@ export default function CriarAnuncio({navigation}){
             setUser(json.nm_nome);
         }
         getUser();
-    },[]);
+    },[]);*/
 
     async function sendPubl(){
         let response= await fetch('http:/10.0.0.108:3333/CreatePost',{
@@ -109,11 +137,20 @@ export default function CriarAnuncio({navigation}){
                     style={cssCA.butaoM} placeholder={'Sua localização/Endereço'}
                         multiline={true}
                         onChangeText={text=>setEnd(text)}/>
+                       <Text>{text}</Text>
+                       <Button title={'ok'} onPress={()=> getlocal()} />
+                       
+
+                       <View style={cssCA.container2}>
+                        <MapView style={cssCA.maps}
+                        
+                        loadingEnabled
+                        showsUserLocation
+                            >
+                        </MapView>
+                        
+                         </View>
                 
-                
-                <View style={cssCA.container2}>
-                    <Image style={cssCA.maps} source={require('../../img/maps.jpg')}/>
-                </View>
 
                 <View style={cssCA.containerbuton}>
                     <TouchableOpacity style={cssCA.local}
